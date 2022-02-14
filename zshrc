@@ -1,7 +1,7 @@
 autoload -Uz compinit
 compinit
 
-#PS1="%1~%# "
+PROMPT="%n@%m: %1~ %# "
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
