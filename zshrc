@@ -1,7 +1,7 @@
 autoload -Uz compinit
 compinit
 
-PROMPT="%n@%m: %1~ %# "
+PROMPT="%n@%m:%1~ %# "
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
@@ -21,7 +21,12 @@ export NVS_HOME="$HOME/.nvs"
 
 export PATH=/usr/local/nvim/bin:$PATH
 
-alias ls='ls -G'
+if [[ `uname` = 'Darwin' ]]; then
+  alias ls='ls -G'
+else
+  alias ls='ls --color'
+fi
+
 alias ll='ls -l'
 
 alias vi='vim'
