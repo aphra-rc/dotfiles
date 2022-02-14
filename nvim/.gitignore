@@ -1,0 +1,8 @@
+*.DS_Store
+.netrwhist
+bundle/*
+plugged/*
+spell/*
+viminfo
+swp/*
+view/*
