@@ -11,4 +11,6 @@ if status is-interactive
   alias vi='vim'
   alias vimrc='vim ~/.vim/vimrc'
   alias shrc='vim ~/.config/fish/config.fish; source ~/.config/fish/config.fish'
+
+  fnm env --use-on-cd | source
 end
