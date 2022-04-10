@@ -4,25 +4,20 @@ compinit
 SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
+export EDITOR=nvim
 export TERM=xterm-256color
-export PATH="$DENO_INSTALL/bin:$PATH"
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[41m'
 export BAT_THEME=ansi
 export FZF_DEFAULT_COMMAND="rg --files --hidden -g '!*.git*'"
+export NVS_HOME="$HOME/.nvs"
+[ -s "$NVS_HOME/nvs.sh" ] && . "$NVS_HOME/nvs.sh"
 
-export EDITOR=nvim
-
-export PATH=/usr/local/nvim/bin:$PATH
-eval "$(fnm env --use-on-cd)"
-
-if [[ `uname` = 'Darwin' ]]; then
-  alias ls='ls -G'
-else
-  alias ls='ls --color'
-fi
-
-alias ll='ls -l'
-
-alias vi='vim'
-alias vim='nvim'
+[[ `uname` = 'Darwin' ]] && LS_COLOR_FLAG='-G' || LS_COLOR_FLAG='--color'
+alias ls="ls $LS_COLOR_FLAG"
+alias ll="ls -l"
+alias vi="$EDITOR"
+alias vim="$EDITOR"
 alias vimrc='vim ~/.vim/vimrc'
 alias shrc='vim ~/.zshrc; . ~/.zshrc'
+

@@ -5,7 +5,7 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'haishanh/night-owl.vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 set nocp
@@ -21,7 +21,6 @@ set clipboard=unnamed
 filetype indent plugin on
 syntax on
 set termguicolors
-color night-owl
 
 inoremap jk <esc>
 nnoremap <leader>y +"y
